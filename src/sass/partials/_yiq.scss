@@ -18,7 +18,7 @@
   @return if($yiq >= $threshold, true, false);
 }
 
-/// Get a color that is properly contrasted with blah blah blah
+/// Returns a light or dark color to ensure proper contrast
 /// @param {Color} $base - The color to be tested
 /// @param {Color} $dark - The color to return if $base is light
 /// @param {Color} $light - The color to return if $base is dark
@@ -33,7 +33,7 @@
   @return if(yiq-is-light($base, $threshold), $dark, $light);
 }
 
-/// Get a color that is properly contrasted with blah blah blah
+/// Sets the specified background color and calculates a dark or light contrasted text color
 /// @param {Color} $base - The color to be tested
 /// @param {Color} $dark - The color to return if $base is light
 /// @param {Color} $light - The color to return if $base is dark
