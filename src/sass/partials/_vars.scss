@@ -1,0 +1,15 @@
+/// The color to use when a light color is being tested
+/// @type Color
+$yiq-contrasted-dark-default: #000 !default;
+
+/// The color to use when a dark color is being tested
+/// @type Color
+$yiq-contrasted-light-default: #fff !default;
+
+/// The YIQ lightness value that $base should be tested against. Acceptable values are between 0 & 255.
+/// @type Number
+$yiq-contrasted-threshold: 128 !default;
+
+/// Output information about colors being tested
+/// @type Boolean
+$yiq-debug: false !default;

@@ -1,0 +1,50 @@
+/// Determines whether a given color is light or dark.
+/// The YIQ color space function gives weights each RGB value according to how sensitive they are to human eyesight.
+/// @param {Color} $color - The color to test
+/// @param {Number} $threshold [$yiq-contrasted-threshold] - The YIQ lightness value that $color should be tested against. Acceptable values are between 0 & 255.
+/// @returns {Boolean}
+@function yiq-is-light(
+  $color,
+  $threshold: $yiq-contrasted-threshold
+) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  $yiq: (($red*299)+($green*587)+($blue*114))/1000;
+
+  @if $yiq-debug { @debug $yiq, $threshold; }
+
+  @return if($yiq >= $threshold, true, false);
+}
+
+/// Get a color that is properly contrasted with blah blah blah
+/// @param {Color} $base - The color to be tested
+/// @param {Color} $dark - The color to return if $base is light
+/// @param {Color} $light - The color to return if $base is dark
+/// @param {Number} $threshold [$yiq-contrasted-threshold] - The YIQ lightness value that $base should be tested against. Acceptable values are between 0 & 255.
+/// @returns {Color} - $dark if $base is light, $light is $base if dark
+@function yiq-contrast-color(
+  $base,
+  $dark: $yiq-contrasted-dark-default,
+  $light: $yiq-contrasted-light-default,
+  $threshold: $yiq-contrasted-threshold
+) {
+  @return if(yiq-is-light($base, $threshold), $dark, $light);
+}
+
+/// Get a color that is properly contrasted with blah blah blah
+/// @param {Color} $base - The color to be tested
+/// @param {Color} $dark - The color to return if $base is light
+/// @param {Color} $light - The color to return if $base is dark
+/// @param {Number} $threshold [$yiq-contrasted-threshold] - The YIQ lightness value that $base should be tested against. Acceptable values are between 0 & 255.
+/// @outputs a background-color/text color combination with proper contrasting
+@mixin yiq-contrasted(
+  $background-color,
+  $dark: $yiq-contrasted-dark-default,
+  $light: $yiq-contrasted-light-default,
+  $threshold: $yiq-contrasted-threshold
+) {
+  background-color: $background-color;
+  color: yiq-contrast-color($background-color, $dark, $light, $threshold);
+}
