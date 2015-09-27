@@ -12,12 +12,6 @@ For information on color contrast and the YIQ color space:
 
 ## Installation options
 
-### Ruby Gem
-
-  ```
-  gem install sass-yiq
-  ```
-
 ### NPM
 
   ```
