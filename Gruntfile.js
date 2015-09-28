@@ -15,6 +15,21 @@ module.exports = function (grunt) {
       test: ['test/output']
     },
 
+    libSass: {
+      options: {
+        includePaths: ['src/sass']
+      },
+      demo: {
+        files: [{
+          expand: true,
+          cwd: 'demo/styles',
+          src: ['*.scss'],
+          dest: 'demo/styles',
+          ext: '.css'
+        }]
+      }
+    },
+
     rubySass: { // test with Ruby version of Sass
       test: 'mkdir -p test/output/rubySass && sass test/tests.scss test/output/rubySass/test.css --sourcemap=none'
     },
@@ -27,7 +42,8 @@ module.exports = function (grunt) {
       src: 'src/sass/'
     }
   };
-
+  
+  grunt.renameTask('sass', 'libSass');
   grunt.renameTask('exec', 'rubySass');
   grunt.initConfig(taskConfig);
 

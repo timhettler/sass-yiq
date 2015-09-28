@@ -1,0 +1,140 @@
+body {
+  font-family: "Helvetica Neue", sans-serif; }
+
+.example-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0; }
+
+.example {
+  box-sizing: border-box;
+  text-align: center;
+  width: 20%;
+  height: 0;
+  padding-top: 10%;
+  position: relative; }
+  .example:after {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+.example--1:after {
+  content: "#000000"; }
+
+.example--default--1 {
+  background-color: #000000;
+  color: #fff; }
+
+.example--50--1 {
+  background-color: #000000;
+  color: #fff; }
+
+.example--yiq--1 {
+  background-color: #000000;
+  color: #fff; }
+
+.example--2:after {
+  content: "#FA5400"; }
+
+.example--default--2 {
+  background-color: #FA5400;
+  color: #000; }
+
+.example--50--2 {
+  background-color: #FA5400;
+  color: #fff; }
+
+.example--yiq--2 {
+  background-color: #FA5400;
+  color: #fff; }
+
+.example--3:after {
+  content: "#87E300"; }
+
+.example--default--3 {
+  background-color: #87E300;
+  color: #000; }
+
+.example--50--3 {
+  background-color: #87E300;
+  color: #fff; }
+
+.example--yiq--3 {
+  background-color: #87E300;
+  color: #000; }
+
+.example--4:after {
+  content: "#00A4E4"; }
+
+.example--default--4 {
+  background-color: #00A4E4;
+  color: #000; }
+
+.example--50--4 {
+  background-color: #00A4E4;
+  color: #fff; }
+
+.example--yiq--4 {
+  background-color: #00A4E4;
+  color: #fff; }
+
+.example--5:after {
+  content: "#983168"; }
+
+.example--default--5 {
+  background-color: #983168;
+  color: #000; }
+
+.example--50--5 {
+  background-color: #983168;
+  color: #fff; }
+
+.example--yiq--5 {
+  background-color: #983168;
+  color: #fff; }
+
+.example--6:after {
+  content: "#DC404A"; }
+
+.example--default--6 {
+  background-color: #DC404A;
+  color: #000; }
+
+.example--50--6 {
+  background-color: #DC404A;
+  color: #000; }
+
+.example--yiq--6 {
+  background-color: #DC404A;
+  color: #fff; }
+
+.example--7:after {
+  content: "#E7FF00"; }
+
+.example--default--7 {
+  background-color: #E7FF00;
+  color: #000; }
+
+.example--50--7 {
+  background-color: #E7FF00;
+  color: #fff; }
+
+.example--yiq--7 {
+  background-color: #E7FF00;
+  color: #000; }
+
+.example--8:after {
+  content: "#BC9A69"; }
+
+.example--default--8 {
+  background-color: #BC9A69;
+  color: #000; }
+
+.example--50--8 {
+  background-color: #BC9A69;
+  color: #000; }
+
+.example--yiq--8 {
+  background-color: #BC9A69;
+  color: #000; }

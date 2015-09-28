@@ -80,6 +80,6 @@ Returns the `$light` color when the `$color` is dark and the `$dark` color when 
 
 Sets the specified background color and calculates a dark or light contrasted text color. The arguments are passed through to the `yiq-contrast-color function`.
 
-<!-- ### Demo
+### Demo
 
-Check out how the YIQ color contrast compares to the default Compass color contrast: http://timhettler.github.io/compass-yiq-color-contrast/ -->
+Check out how the YIQ color contrast compares to HSL color contrast: http://timhettler.github.io/sass-yiq/demo/
