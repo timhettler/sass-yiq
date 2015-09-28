@@ -24,61 +24,13 @@ For information on color contrast and the YIQ color space:
   bower install sass-yiq
   ```
 
-## Usage
+## Usage & Configuration
 
   ```scss
-  @import 'yiq-color-contrast'
-  ```
-  
-### Configurable Variables
-
-All configuration variables are assigned with the `!default` flag, so they may be overriden in your project stylesheet.
-
-  ```scss
-  $yiq-contrasted-dark-default: #000;
+  @import 'sass-yiq'
   ```
 
-The text color to be used when a background is determined to be "light"
-
-  ```scss
-  $yiq-contrasted-light-default: #fff;
-  ```
-
-The text color to be used when a background is determined to be "dark"
-
-  ```scss
-  $yiq-contrasted-threshold: 128;
-  ```
-
-A a value between 0 and 255. It determines when the lightness of color changes from "dark" to "light".
-
-  ```scss
-  $yiq-debug: false;
-  ```
-
-Toggles diagnostic messages.
-
-### Functions
-
-  ```scss
-  yiq-is-light($color, [$threshold])
-  ```
-
-Returns `true` if the color is "light" or `false` if it is "dark".
-
-  ```scss
-  yiq-contrast-color($color, [$dark], [$light], [$threshold])
-  ```
-
-Returns the `$light` color when the `$color` is dark and the `$dark` color when the `$color` is light. The `$threshold` is a value between 0 and 255 and it determines when the lightness of `$color` changes from "dark" to "light".
-
-### Mixins
-
-  ```scss
-  @include yiq-contrasted($background-color, [$dark], [$light], [$threshold])
-  ```
-
-Sets the specified background color and calculates a dark or light contrasted text color. The arguments are passed through to the `yiq-contrast-color function`.
+Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/sassdoc)
 
 ### Demo
 

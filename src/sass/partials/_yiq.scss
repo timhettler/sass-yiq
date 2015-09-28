@@ -18,7 +18,7 @@
   @return if($yiq >= $threshold, true, false);
 }
 
-/// Returns a light or dark color to ensure proper contrast
+/// Returns an appropriate color to ensure proper contrast
 /// @param {Color} $base - The color to be tested
 /// @param {Color} $dark - The color to return if $base is light
 /// @param {Color} $light - The color to return if $base is dark
