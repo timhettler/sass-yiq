@@ -1,6 +1,6 @@
 # YIQ Color Contrast
 
-A naive approach to determing whether a color is "light" or "dark" by checking the lightness value in the HSL color space. It works sometimes, but often produces color pairings that - while technically correct - just look a little "off". The reason for this is that the eye is more sensitive to changes in the orange-blue range than in the purple-green range, so the percieved lightness of a color can change depending its wavelength.
+The obvious way to determe whether a color is "light" or "dark" by checking the lightness value in the HSL color space. this approach works sometimes, but often produces color pairings that - while technically correct - just look a little "off". The reason for this is that the eye is more sensitive to changes in the orange-blue range than in the purple-green range, so the percieved lightness of a color can change depending its wavelength.
 
 The YIQ color space is designed to take this bias into account. It weighs the different parts of the color according to their impact on our perpection of the color's brightness. By utilizing this color space when doing contrast comparison, the result is a color pairing that appears more natural.
 
