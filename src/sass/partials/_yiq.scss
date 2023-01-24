@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "vars";
+
 @use "sass:math";
 
 /// Determines whether a given color is light or dark.
@@ -5,17 +8,16 @@
 /// @param {Color} $color - The color to test
 /// @param {Number} $threshold [$yiq-contrasted-threshold] - The YIQ lightness value that $color should be tested against. Acceptable values are between 0 & 255.
 /// @returns {Boolean}
-@function yiq-is-light(
-  $color,
-  $threshold: $yiq-contrasted-threshold
-) {
-  $red: red($color);
-  $green: green($color);
-  $blue: blue($color);
+@function yiq-is-light($color, $threshold: vars.$yiq-contrasted-threshold) {
+  $red: color.red($color);
+  $green: color.green($color);
+  $blue: color.blue($color);
 
-  $yiq: math.div(($red*299)+($green*587)+($blue*114), 1000);
+  $yiq: math.div(($red * 299)+ ($green * 587)+ ($blue * 114), 1000);
 
-  @if $yiq-debug { @debug $yiq, $threshold; }
+  @if vars.$yiq-debug {
+    @debug $yiq, $threshold;
+  }
 
   @return if($yiq >= $threshold, true, false);
 }
@@ -28,9 +30,9 @@
 /// @returns {Color} - $dark if $base is light, $light is $base if dark
 @function yiq-contrast-color(
   $base,
-  $dark: $yiq-contrasted-dark-default,
-  $light: $yiq-contrasted-light-default,
-  $threshold: $yiq-contrasted-threshold
+  $dark: vars.$yiq-contrasted-dark-default,
+  $light: vars.$yiq-contrasted-light-default,
+  $threshold: vars.$yiq-contrasted-threshold
 ) {
   @return if(yiq-is-light($base, $threshold), $dark, $light);
 }
@@ -43,9 +45,9 @@
 /// @outputs a background-color/text color combination with proper contrasting
 @mixin yiq-contrasted(
   $background-color,
-  $dark: $yiq-contrasted-dark-default,
-  $light: $yiq-contrasted-light-default,
-  $threshold: $yiq-contrasted-threshold
+  $dark: vars.$yiq-contrasted-dark-default,
+  $light: vars.$yiq-contrasted-light-default,
+  $threshold: vars.$yiq-contrasted-threshold
 ) {
   background-color: $background-color;
   color: yiq-contrast-color($background-color, $dark, $light, $threshold);
