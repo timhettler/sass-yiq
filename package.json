@@ -1,40 +1,57 @@
 {
   "name": "sass-yiq",
-  "version": "1.0.0",
-  "description": "Create more natural color contrasts",
-  "main": "src/sass/yiq.scss",
-  "scripts": {
-    "test": "grunt test"
-  },
+  "title": "Sass YIQ",
+  "version": "2.0.0",
+  "description": "Create more natural color contrasts with Sass.",
+  "homepage": "https://github.com/timhettler/sass-yiq",
+  "main": "_index.scss",
+  "files": [
+    "sass/**/*",
+    "_index.scss",
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "README.md"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/timhettler/sass-yiq"
   },
+  "bugs": {
+    "url": "https://github.com/timhettler/sass-yiq/issues"
+  },
+  "author": "Tim Hettler <me+github@timhettler.com>",
   "keywords": [
     "sass",
     "color",
     "contrast"
   ],
-  "author": "Tim Hettler <me+github@timhettler.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/timhettler/sass-yiq/issues"
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "test": "mocha",
+    "generate:docs": "sassdoc sass",
+    "generate:demo": "sass sass demo/styles",
+    "generate": "run-p generate:*",
+    "postinstall": "is-ci && husky install",
+    "prepare:package": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
-  "homepage": "https://github.com/timhettler/sass-yiq",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-exec": "^0.4.6",
-    "grunt-githooks": "^0.3.1",
-    "grunt-mocha-cli": "^1.14.0",
-    "grunt-sass": "^1.1.0-beta",
-    "grunt-sassdoc": "^2.0.1",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "json": "^11.0.0",
     "load-grunt-tasks": "^3.1.0",
-    "sass-migrator": "^1.7.2",
-    "sass-true": "^2.0.2"
+    "mocha": "^10.2.0",
+    "pinst": "^3.0.0",
+    "sass": "^1.57.1",
+    "sass-true": "^7.0.0",
+    "sassdoc": "^2.7.4"
   },
   "dependencies": {
-    "sass": "^1.57.1"
+    "npm-run-all": "^4.1.5"
   },
-  "packageManager": "yarn@3.3.1"
+  "peerDependencies": {
+    "sass": ">=1.45.0"
+  }
 }
