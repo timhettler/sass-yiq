@@ -55,6 +55,6 @@ body {
     @include hsl-contrasted($color: nth($color-list, $i), $threshold: 50%);
   }
   .example--yiq--#{$i} {
-    @include yiq-contrasted(nth($color-list, $i));
+    @include yiq.contrasted(nth($color-list, $i));
   }
 }

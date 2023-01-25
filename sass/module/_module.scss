@@ -2,9 +2,13 @@
 @use "sass:math";
 @use "../config/" as *;
 
+/// # Functions & Mixins
+/// @group modules
+
 /// Determines whether a given color is light or dark.
 /// The YIQ color space function gives weights each RGB value according to how sensitive they are to human eyesight.
 /// @since v2.0 – Renamed from `yiq-is-light`
+/// @group modules
 /// @param {Color} $color - The color to test
 /// @param {Number} $threshold [$contrasted-threshold] - The YIQ lightness value that $color should be tested against. Acceptable values are between 0 & 255.
 /// @returns {Boolean} - true if color is light
@@ -24,6 +28,7 @@
 
 /// Returns an appropriate color to ensure proper contrast
 /// @since v2.0 – Renamed from `yiq-contrast-color`
+/// @group modules
 /// @param {Color} $base - The color to be tested
 /// @param {Color} $dark - The color to return if $base is light
 /// @param {Color} $light - The color to return if $base is dark
@@ -40,6 +45,7 @@
 
 /// Sets the specified background color and calculates a dark or light contrasted text color
 /// @since v2.0 – Renamed from `yiq-contrasted`
+/// @group modules
 /// @param {Color} $base - The color to be tested
 /// @param {Color} $dark - The color to return if $base is light
 /// @param {Color} $light - The color to return if $base is dark
