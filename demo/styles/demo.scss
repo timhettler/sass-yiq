@@ -1,5 +1,5 @@
 @use "sass:string";
-@use "../../index" as *;
+@use "../../index" as yiq;
 
 $gutter-width: 1em;
 $color-list: #000000, #fa5400, #87e300, #00a4e4, #983168, #dc404a, #e7ff00,
@@ -7,8 +7,8 @@ $color-list: #000000, #fa5400, #87e300, #00a4e4, #983168, #dc404a, #e7ff00,
 
 @mixin hsl-contrasted(
   $color,
-  $dark: $yiq-contrasted-dark-default,
-  $light: $yiq-contrasted-light-default,
+  $dark: yiq.$contrasted-dark-default,
+  $light: yiq.$contrasted-light-default,
   $threshold: 30%
 ) {
   $lightness: lightness($color);
