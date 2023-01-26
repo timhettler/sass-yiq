@@ -17,13 +17,13 @@ Compare YIQ color contrast to HSL color contrast: http://timhettler.github.io/sa
 ## Installation
 
 ```
-npm install sass-yiq
+yarn add @timhettler/sass-yiq
 ```
 
 ## Usage & Configuration
 
 ```scss
-@use "sass-yiq" as yiq;
+@use "@timhettler/sass-yiq" as yiq;
 
 .container {
   @include yiq.contrasted(#fa5400, #000, #fff);

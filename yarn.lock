@@ -128,6 +128,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@timhettler/sass-yiq@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@timhettler/sass-yiq@workspace:."
+  dependencies:
+    husky: ^8.0.0
+    is-ci: ^3.0.1
+    json: ^11.0.0
+    mocha: ^10.2.0
+    npm-run-all: ^4.1.5
+    pinst: ^3.0.0
+    prettier: ^2.8.3
+    sass: ^1.57.1
+    sass-true: ^7.0.0
+    sassdoc: ^2.7.4
+    sassdoc-theme-herman: ^5.0.1
+    stylelint: ^14.16.1
+    stylelint-config-prettier: ^9.0.4
+    stylelint-config-standard-scss: ^6.1.0
+    stylelint-prettier: ^2.0.0
+  peerDependencies:
+    sass: ">=1.45.0"
+  languageName: unknown
+  linkType: soft
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -4736,30 +4760,6 @@ __metadata:
   checksum: 2af304dc45628d776a572eb6a381e297d2e357d90abf2086c26af6a1f73c4eaea76760561f4067b8de82afcde60852c58d89769ef3c6122c8e620c32d35dc308
   languageName: node
   linkType: hard
-
-"sass-yiq@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "sass-yiq@workspace:."
-  dependencies:
-    husky: ^8.0.0
-    is-ci: ^3.0.1
-    json: ^11.0.0
-    mocha: ^10.2.0
-    npm-run-all: ^4.1.5
-    pinst: ^3.0.0
-    prettier: ^2.8.3
-    sass: ^1.57.1
-    sass-true: ^7.0.0
-    sassdoc: ^2.7.4
-    sassdoc-theme-herman: ^5.0.1
-    stylelint: ^14.16.1
-    stylelint-config-prettier: ^9.0.4
-    stylelint-config-standard-scss: ^6.1.0
-    stylelint-prettier: ^2.0.0
-  peerDependencies:
-    sass: ">=1.45.0"
-  languageName: unknown
-  linkType: soft
 
 "sass@npm:^1.57.1":
   version: 1.57.1

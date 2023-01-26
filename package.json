@@ -1,5 +1,5 @@
 {
-  "name": "sass-yiq",
+  "name": "@timhettler/sass-yiq",
   "title": "Sass YIQ",
   "version": "2.0.0",
   "description": "Create more natural color contrasts with Sass.",
