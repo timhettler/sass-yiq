@@ -30,4 +30,4 @@ yarn add @timhettler/sass-yiq
 }
 ```
 
-Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/docs)
+Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/)
