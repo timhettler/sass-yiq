@@ -56,7 +56,6 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-prettier": "^2.0.0"
   },
-  "dependencies": {},
   "peerDependencies": {
     "sass": ">=1.45.0"
   }
