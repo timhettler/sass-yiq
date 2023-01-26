@@ -1,0 +1,61 @@
+@use "sass:color";
+@use "sass:math";
+@use "../config/" as *;
+
+/// # Functions & Mixins
+/// @group modules
+
+/// Determines whether a given color is light or dark.
+/// The YIQ color space function gives weights each RGB value according to how sensitive they are to human eyesight.
+/// @since v2.0 – Renamed from `yiq-is-light`
+/// @group modules
+/// @param {Color} $color - The color to test
+/// @param {Number} $threshold [$contrasted-threshold] - The YIQ lightness value that $color should be tested against. Acceptable values are between 0 & 255.
+/// @returns {Boolean} - true if color is light
+@function is-light($color, $threshold: $contrasted-threshold) {
+  $red: color.red($color);
+  $green: color.green($color);
+  $blue: color.blue($color);
+  $yiq: math.div(($red * 299) + ($green * 587) + ($blue * 114), 1000);
+
+  @if $debug {
+    @debug $yiq, $threshold;
+  }
+
+  @return if($yiq >= $threshold, true, false);
+}
+
+/// Returns an appropriate color to ensure proper contrast
+/// @since v2.0 – Renamed from `yiq-contrast-color`
+/// @group modules
+/// @param {Color} $base - The color to be tested
+/// @param {Color} $dark - The color to return if $base is light
+/// @param {Color} $light - The color to return if $base is dark
+/// @param {Number} $threshold [$contrasted-threshold] - The YIQ lightness value that $base should be tested against. Acceptable values are between 0 & 255.
+/// @returns {Color} - $dark if $base is light, $light is $base if dark
+@function contrast-color(
+  $base,
+  $dark: $contrasted-dark-default,
+  $light: $contrasted-light-default,
+  $threshold: $contrasted-threshold
+) {
+  @return if(is-light($base, $threshold), $dark, $light);
+}
+
+/// Sets the specified background color and calculates a dark or light contrasted text color
+/// @since v2.0 – Renamed from `yiq-contrasted`
+/// @group modules
+/// @param {Color} $base - The color to be tested
+/// @param {Color} $dark - The color to return if $base is light
+/// @param {Color} $light - The color to return if $base is dark
+/// @param {Number} $threshold [$contrasted-threshold] - The YIQ lightness value that $base should be tested against. Acceptable values are between 0 & 255.
+/// @outputs a background-color/text color combination with proper contrasting
+@mixin contrasted(
+  $background-color,
+  $dark: $contrasted-dark-default,
+  $light: $contrasted-light-default,
+  $threshold: $contrasted-threshold
+) {
+  background-color: $background-color;
+  color: contrast-color($background-color, $dark, $light, $threshold);
+}

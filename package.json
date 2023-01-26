@@ -1,35 +1,63 @@
 {
-  "name": "sass-yiq",
-  "version": "1.0.0",
-  "description": "Create more natural color contrasts",
-  "main": "src/sass/yiq.scss",
-  "scripts": {
-    "test": "grunt test"
-  },
+  "name": "@timhettler/sass-yiq",
+  "title": "Sass YIQ",
+  "version": "2.0.0",
+  "description": "Create more natural color contrasts with Sass.",
+  "homepage": "https://github.com/timhettler/sass-yiq",
+  "main": "_index.scss",
+  "files": [
+    "sass/**/*",
+    "_index.scss",
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "README.md"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/timhettler/sass-yiq"
   },
+  "bugs": {
+    "url": "https://github.com/timhettler/sass-yiq/issues"
+  },
+  "author": "Tim Hettler <me+github@timhettler.com>",
   "keywords": [
     "sass",
     "color",
     "contrast"
   ],
-  "author": "Tim Hettler <me+github@timhettler.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/timhettler/sass-yiq/issues"
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "test": "mocha",
+    "generate:docs": "sassdoc sass --theme herman",
+    "generate:demo": "sass sass demo/styles",
+    "generate": "run-p generate:docs generate:demo",
+    "_postinstall": "is-ci && husky install",
+    "prettier": "prettier --write '**/*.{json,md,yml}'",
+    "lint": "stylelint '**/*.scss' --fix",
+    "prepare:pinst": "pinst --disable",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
-  "homepage": "https://github.com/timhettler/sass-yiq",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-exec": "^0.4.6",
-    "grunt-githooks": "^0.3.1",
-    "grunt-mocha-cli": "^1.14.0",
-    "grunt-sass": "^1.1.0-beta",
-    "grunt-sassdoc": "^2.0.1",
-    "load-grunt-tasks": "^3.1.0",
-    "sass-true": "^2.0.2"
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "json": "^11.0.0",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "pinst": "^3.0.0",
+    "prettier": "^2.8.3",
+    "sass": "^1.57.1",
+    "sass-true": "^7.0.0",
+    "sassdoc": "^2.7.4",
+    "sassdoc-theme-herman": "^5.0.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-prettier": "^2.0.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "sass": ">=1.45.0"
   }
 }
