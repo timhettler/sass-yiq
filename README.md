@@ -20,7 +20,7 @@ Compare YIQ color contrast to HSL color contrast: http://timhettler.github.io/sa
 yarn add @timhettler/sass-yiq
 ```
 
-## Usage & Configuration
+## Usage
 
 ```scss
 @use "@timhettler/sass-yiq" as yiq;
@@ -30,4 +30,4 @@ yarn add @timhettler/sass-yiq
 }
 ```
 
-Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/sassdoc)
+Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/docs)

@@ -1,0 +1,13 @@
+theme: herman
+dest: docs/
+src: sass/
+
+display:
+  access: public
+
+herman:
+  extraDocs:
+    - name: "Changelog"
+      path: CHANGELOG.md
+    - name: "MIT License"
+      path: LICENSE.txt

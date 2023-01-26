@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Search Results | Sass YIQ Documentation</title>
+  <title>Changelog | Sass YIQ Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -62,6 +62,20 @@
 
       
       
+        <ul>
+          
+            
+            <li class="nav-item">
+              <a href="CHANGELOG.html" data-nav="is-active">Changelog</a>
+            </li>
+          
+            
+            <li class="nav-item">
+              <a href="LICENSE.html" data-nav="is-not-active">MIT License</a>
+            </li>
+          
+        </ul>
+      
     </div>
 
     
@@ -113,12 +127,29 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Sass YIQ</a> »
-    <strong>Search Results</strong>
+    <strong>Changelog</strong>
   </nav>
 
 
-        <div data-page="search">
+        <div data-page="CHANGELOG">
           
+  <div class="text-block">
+    <h1 id="sass-yiq-changelog" tabindex="-1">Sass YIQ CHANGELOG</h1>
+<h2 id="2-0-0-01-25-22-" tabindex="-1">2.0.0 (01/25/22)</h2>
+<ul>
+<li>BREAKING: Package name is now scoped: <code>@timhettler/sass-yiq</code></li>
+<li>BREAKING: Switch to Dart Sass with Sass module system, dropping support for Node<span class="widont">&nbsp;</span>Sass.</li>
+<li>BREAKING: Move <code>sass</code> to <code>peerDependencies</code>.</li>
+<li>BREAKING: Drop <code>yiq-</code> from variable, module, and function names. Projects not using Sass modules can still <code>@import '&lt;path&gt;/@timhettler/sass-yiq/sass/yiq'</code> to access the former<span class="widont">&nbsp;</span>names.</li>
+<li>BREAKING: Removed Bower<span class="widont">&nbsp;</span>support.</li>
+<li>BREAKING: Removed Sache<span class="widont">&nbsp;</span>support.</li>
+<li>FEATURE: Added <code>\_index.scss</code> at the project root, for simpler import path: @use ‘<path>/@timhettler/sass-yiq’</li>
+<li>INTERNAL: Remove Grunt(!)</li>
+<li>INTERNAL: Update dev dependencies and package<span class="widont">&nbsp;</span>manager</li>
+</ul>
+
+  </div>
+
         </div>
       </main>
     </div>
@@ -128,12 +159,5 @@
   <script type="text/javascript" src="assets/webpack/common.min.js"></script>
   <script type="text/javascript" src="assets/webpack/app.min.js"></script>
   
-  <script type="text/javascript" src="assets/webpack/search.min.js"></script>
-  <script type="text/javascript">
-    $(() => {
-      getSearchData();
-    });
-  </script>
-
 </body>
 </html>

@@ -62,6 +62,20 @@
 
       
       
+        <ul>
+          
+            
+            <li class="nav-item">
+              <a href="CHANGELOG.html" data-nav="is-not-active">Changelog</a>
+            </li>
+          
+            
+            <li class="nav-item">
+              <a href="LICENSE.html" data-nav="is-not-active">MIT License</a>
+            </li>
+          
+        </ul>
+      
     </div>
 
     
@@ -132,27 +146,27 @@
   
     <div class="text-block">
       <h1 id="yiq-color-contrast" tabindex="-1">YIQ Color Contrast</h1>
-<p>The obvious way to determe whether a color is “light” or “dark” by checking the lightness value in the HSL color space. this approach works sometimes, but often produces color pairings that - while technically correct - just look a little “off”. The reason for this is that the eye is more sensitive to changes in the orange-blue range than in the purple-green range, so the percieved lightness of a color can change depending its<span class="widont">&nbsp;</span>wavelength.</p>
-<p>The YIQ color space is designed to take this bias into account. It weighs the different parts of the color according to their impact on our perpection of the color’s brightness. By utilizing this color space when doing contrast comparison, the result is a color pairing that appears more<span class="widont">&nbsp;</span>natural.</p>
+<p>Most approaches to checking color contrast use the HSL color space. This often produces color pairings that - while technically correct - look just a little “off”. The reason for this is that the eye is more sensitive to changes in the orange-blue range than in the purple-green range, so the percieved lightness of a color can change depending its<span class="widont">&nbsp;</span>wavelength.</p>
+<p>The YIQ color space is designed to take this bias into account. It weighs the different parts of the color according to their impact on our perpection of the color’s brightness. Color pairings appear more natural when utilizing this color space for contrast<span class="widont">&nbsp;</span>comparisons.</p>
 <p>For information on color contrast and the YIQ color<span class="widont">&nbsp;</span>space:</p>
 <ul>
 <li><a href="http://24ways.org/2010/calculating-color-contrast/"><strong>24 Ways:</strong> Calculating Color<span class="widont">&nbsp;</span>Contrast</a></li>
 <li><a href="http://www.w3.org/TR/AERT#color-contrast"><strong>W3C:</strong> Ensure that foreground and background color combinations provide sufficient contrast when viewed by someone having color deficits or when viewed on a black and white<span class="widont">&nbsp;</span>screen</a></li>
 <li><a href="http://en.wikipedia.org/wiki/YIQ"><strong>Wikipedia:</strong> YIQ</a></li>
 </ul>
+<h2 id="demo" tabindex="-1">Demo</h2>
+<p>Compare YIQ color contrast to HSL color contrast: <a href="http://timhettler.github.io/sass-yiq/demo/">http://timhettler.github.io/sass-yiq/demo/</a></p>
 <h2 id="installation" tabindex="-1">Installation</h2>
-<pre><code>npm install sass-yiq
+<pre><code>yarn add @timhettler/sass-yiq
 </code></pre>
 <h2 id="usage-configuration" tabindex="-1">Usage &amp; Configuration</h2>
-<pre><code class="lang-scss">@use &quot;sass-yiq&quot; as yiq;
+<pre><code class="lang-scss">@use &quot;@timhettler/sass-yiq&quot; as yiq;
 
 .container {
   @include yiq.contrasted(#fa5400, #000, #fff);
 }
 </code></pre>
 <p>Details on available variables, functions, and mixins can be found in the <a href="http://timhettler.github.io/sass-yiq/sassdoc">SassDoc<span class="widont">&nbsp;</span>documentation</a></p>
-<h3 id="demo" tabindex="-1">Demo</h3>
-<p>Check out how the YIQ color contrast compares to HSL color contrast: <a href="http://timhettler.github.io/sass-yiq/demo/">http://timhettler.github.io/sass-yiq/demo/</a></p>
 
     </div>
   

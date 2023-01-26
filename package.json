@@ -29,10 +29,10 @@
   "packageManager": "yarn@3.3.1",
   "scripts": {
     "test": "mocha",
-    "generate:docs": "sassdoc sass --theme herman",
+    "generate:docs": "sassdoc sass/",
     "generate:demo": "sass sass demo/styles",
     "generate": "run-p generate:docs generate:demo",
-    "_postinstall": "is-ci && husky install",
+    "postinstall": "is-ci && husky install",
     "prettier": "prettier --write '**/*.{json,md,yml}'",
     "lint": "stylelint '**/*.scss' --fix",
     "prepare:pinst": "pinst --disable",
