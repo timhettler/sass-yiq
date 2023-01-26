@@ -16,8 +16,7 @@
   $red: color.red($color);
   $green: color.green($color);
   $blue: color.blue($color);
-
-  $yiq: math.div(($red * 299)+ ($green * 587)+ ($blue * 114), 1000);
+  $yiq: math.div(($red * 299) + ($green * 587) + ($blue * 114), 1000);
 
   @if $debug {
     @debug $yiq, $threshold;

@@ -1,0 +1,9 @@
+!.*
+.git/
+.vscode/
+.yarn/
+.yarnrc
+demo/
+sassdoc/
+node_modules/
+**/*.scss
