@@ -5,6 +5,10 @@
   "description": "Create more natural color contrasts with Sass.",
   "homepage": "https://github.com/timhettler/sass-yiq",
   "main": "_index.scss",
+  "module": "_index.scss",
+  "exports": {
+    ".": "./_index.scss"
+  },
   "files": [
     "sass/**/*",
     "_index.scss",
@@ -22,6 +26,7 @@
   },
   "author": "Tim Hettler <me+github@timhettler.com>",
   "keywords": [
+    "ui",
     "sass",
     "color",
     "contrast"
