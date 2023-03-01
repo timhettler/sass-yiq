@@ -56,7 +56,7 @@
     "sass-true": "^7.0.0",
     "sassdoc": "^2.7.4",
     "sassdoc-theme-herman": "^5.0.1",
-    "stylelint": "^14.16.1",
+    "stylelint": "^15.2.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-prettier": "^2.0.0"
