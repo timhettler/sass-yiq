@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - name: Check out code
@@ -37,7 +37,34 @@ jobs:
           fi
           echo "Publishing version ${PKG_VERSION}"
 
+      - name: Extract release notes from CHANGELOG
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v ver="$VERSION" '
+            $1 == "##" && $2 == ver { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' CHANGELOG.md | perl -0777 -pe 's/\A\n+//; s/\n+\z/\n/' > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "::error::No CHANGELOG.md entry found for version ${VERSION}"
+            exit 1
+          fi
+          echo "Release notes for ${VERSION}:"
+          cat release-notes.md
+
       - name: Publish to npm
-        run: yarn npm publish --access public
+        run: yarn npm publish --access public --tolerate-republish
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "Release ${GITHUB_REF_NAME} exists — updating notes."
+            gh release edit "$GITHUB_REF_NAME" --notes-file release-notes.md
+          else
+            echo "Creating release ${GITHUB_REF_NAME}."
+            gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes-file release-notes.md
+          fi
