@@ -13,10 +13,15 @@ $color-list: #000, #fa5400, #87e300, #00a4e4, #983168, #dc404a, #e7ff00,
   $light: yiq.$contrasted-light-default,
   $threshold: 30%
 ) {
-  $lightness: color.lightness($color);
+  $lightness: color.channel($color, "lightness", $space: hsl);
 
   background-color: $color;
-  color: if($lightness > $threshold, $dark, $light);
+
+  @if $lightness > $threshold {
+    color: $dark;
+  } @else {
+    color: $light;
+  }
 }
 
 body {

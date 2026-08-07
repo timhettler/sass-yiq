@@ -1,5 +1,10 @@
 # Sass YIQ CHANGELOG
 
+## 3.0.0 (08/07/26)
+
+- BREAKING: Require Dart Sass `>=1.79.0` (was `>=1.45.0`). The Sass source now uses `color.channel()`, which is only available in Dart Sass `>=1.79.0`, so consumers on older Sass versions must upgrade.
+- INTERNAL: Migrate off Sass functions deprecated for removal in Dart Sass 2.0: `color.red()`, `color.green()`, `color.blue()`, and `color.lightness()` are now `color.channel()`, and the `if()` function is now `@if`/`@else`. The library builds with zero deprecation warnings.
+
 ## 2.0.0 (01/25/22)
 
 - BREAKING: Package name is now scoped: `@timhettler/sass-yiq`

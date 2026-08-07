@@ -392,7 +392,7 @@ __metadata:
     stylelint-config-standard-scss: "npm:^17.0.0"
     stylelint-prettier: "npm:^5.0.3"
   peerDependencies:
-    sass: ">=1.45.0"
+    sass: ">=1.79.0"
   languageName: unknown
   linkType: soft
 

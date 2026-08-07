@@ -1,7 +1,7 @@
 {
   "name": "@timhettler/sass-yiq",
   "title": "Sass YIQ",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Create more natural color contrasts with Sass.",
   "homepage": "https://github.com/timhettler/sass-yiq",
   "main": "_index.scss",
@@ -53,7 +53,7 @@
     "stylelint-prettier": "^5.0.3"
   },
   "peerDependencies": {
-    "sass": ">=1.45.0"
+    "sass": ">=1.79.0"
   },
   "resolutions": {
     "node-gyp": "^11.0.0",
