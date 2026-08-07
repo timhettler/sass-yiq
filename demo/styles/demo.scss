@@ -45,7 +45,7 @@ body {
   }
 }
 
-@for $i from 1 through length($color-list) {
+@for $i from 1 through list.length($color-list) {
   .example--#{$i} {
     &::after {
       content: string.quote(#{list.nth($color-list, $i)});
