@@ -13,16 +13,16 @@
 /// @param {Number} $threshold [$contrasted-threshold] - The YIQ lightness value that $color should be tested against. Acceptable values are between 0 & 255.
 /// @returns {Boolean} - true if color is light
 @function is-light($color, $threshold: $contrasted-threshold) {
-  $red: color.red($color);
-  $green: color.green($color);
-  $blue: color.blue($color);
+  $red: color.channel($color, "red", $space: rgb);
+  $green: color.channel($color, "green", $space: rgb);
+  $blue: color.channel($color, "blue", $space: rgb);
   $yiq: math.div(($red * 299) + ($green * 587) + ($blue * 114), 1000);
 
   @if $debug {
     @debug $yiq, $threshold;
   }
 
-  @return if($yiq >= $threshold, true, false);
+  @return $yiq >= $threshold;
 }
 
 /// Returns an appropriate color to ensure proper contrast
@@ -39,7 +39,11 @@
   $light: $contrasted-light-default,
   $threshold: $contrasted-threshold
 ) {
-  @return if(is-light($base, $threshold), $dark, $light);
+  @if is-light($base, $threshold) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
 }
 
 /// Sets the specified background color and calculates a dark or light contrasted text color

@@ -1,7 +1,7 @@
 {
   "name": "@timhettler/sass-yiq",
   "title": "Sass YIQ",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Create more natural color contrasts with Sass.",
   "homepage": "https://github.com/timhettler/sass-yiq",
   "main": "_index.scss",
@@ -31,66 +31,35 @@
     "color",
     "contrast"
   ],
-  "packageManager": "yarn@3.3.1",
+  "packageManager": "yarn@4.18.0",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "mocha",
-    "generate:docs": "sassdoc sass/",
-    "generate:demo": "sass sass demo/styles",
-    "generate": "run-p generate:docs generate:demo",
-    "postinstall": "is-ci && husky install",
+    "generate": "sass sass demo/styles",
     "prettier": "prettier --write '**/*.{json,md,yml}'",
     "lint": "stylelint '**/*.scss' --fix",
-    "prepare:pinst": "pinst --disable",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "^8.0.0",
-    "is-ci": "^3.0.1",
-    "json": "^11.0.0",
-    "mocha": "^10.2.0",
-    "npm-run-all": "^4.1.5",
-    "pinst": "^3.0.0",
-    "prettier": "^2.8.3",
-    "sass": "^1.57.1",
-    "sass-true": "^7.0.0",
-    "sassdoc": "^2.7.4",
-    "sassdoc-theme-herman": "^5.0.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-prettier": "^2.0.0"
+    "husky": "^9.1.7",
+    "mocha": "^11.8.0",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "sass-true": "^10.1.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-prettier": "^5.0.3"
   },
   "peerDependencies": {
-    "sass": ">=1.45.0"
+    "sass": ">=1.79.0"
   },
   "resolutions": {
-    "@tootallnate/once": "^2.0.1",
-    "ajv": "^8.18.0",
-    "brace-expansion": "^2.0.2",
-    "braces": "^3.0.3",
-    "cross-spawn": "^6.0.6",
-    "diff": "^5.2.2",
-    "flatted": "^3.4.0",
-    "got": "^11.8.5",
-    "http-cache-semantics": "^4.1.1",
-    "immutable": "^4.3.8",
-    "ip": "^2.0.1",
-    "js-yaml": "^3.14.2",
-    "linkify-it": "^5.0.1",
-    "markdown-it": "^14.1.1",
-    "marked": "^0.7.0",
-    "micromatch": "^4.0.8",
-    "minimatch": "^5.1.7",
-    "nanoid": "^3.3.8",
-    "nunjucks": "^3.2.4",
-    "picomatch": "^2.3.2",
-    "postcss": "^8.4.31",
-    "semver": "^7.5.2",
-    "semver-regex": "^3.1.3",
-    "serialize-javascript": "^7.0.3",
-    "shell-quote": "^1.8.4",
-    "tar": "^6.2.1",
-    "yaml": "^1.10.3"
+    "node-gyp": "^11.0.0",
+    "tar": "^7.5.22",
+    "serialize-javascript": "^7.0.7",
+    "glob": "^13.0.6",
+    "diff": "^8.0.3"
   }
 }

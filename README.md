@@ -30,4 +30,6 @@ yarn add @timhettler/sass-yiq
 }
 ```
 
-Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/)
+Details on available variables, functions, and mixins can be found in the [SassDoc documentation](http://timhettler.github.io/sass-yiq/).
+
+> **Note:** The published SassDoc reference is a static snapshot of the current release. It is no longer regenerated on every build (the unmaintained `sassdoc` toolchain was removed), so treat the inline comments in the `sass/` source as the authoritative API reference.
